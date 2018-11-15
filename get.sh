@@ -29,6 +29,7 @@ JDK_VERSION="SE80"
 JDK_IMPL="openj9"
 RELEASES="latest"
 TYPE="jdk"
+REPO_TAG="master"
 
 
 usage ()
@@ -64,6 +65,9 @@ parseCommandLineArgs()
 
 			"--testdir" | "-t" )
 				TESTDIR="$1"; shift;;
+
+			"--repotag" | "-T" )
+				REPO_TAG="$1"; shift;;
 
 			"--platform" | "-p" )
 				PLATFORM="$1"; shift;;

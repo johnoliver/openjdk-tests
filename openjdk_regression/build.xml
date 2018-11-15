@@ -68,6 +68,12 @@
 		<exec executable="git" failonerror="false">
 			<arg line="clone --depth 1 -q https://github.com/AdoptOpenJDK/${openjdkGit}.git" />
 		</exec>
+		<exec executable="git" dir="${openjdkGit}" failonerror="false">
+			<arg line="fetch --all --tags" />
+		</exec>
+		<exec executable="git" dir="${openjdkGit}" failonerror="false">
+			<arg line="checkout ${REPO_TAG}" />
+		</exec>
 		<move file="${openjdkGit}" tofile="openjdk-jdk"/>
 		<if>
                         <or>
